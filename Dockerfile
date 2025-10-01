@@ -40,7 +40,6 @@ COPY ./authorize_keys.sh /
 
 # We use supervisor instead of systemd to start multiple applications.
 COPY ./supervisord.conf /etc/
-COPY ./supervisor-log-prefix.sh /
 
 # SSH proxy
 EXPOSE 22
