@@ -16,14 +16,14 @@ touch ssh/authorized_keys
 docker compose up -d
 ```
 
-## .gitconfig
+### Edit and add to your '.gitconfig' file
 
 ```
 [http "https://git.daal.plus"]
     proxy = socks5h://127.0.0.1:8080
 ```
 
-## .ssh/config
+### Same for .ssh/config
 
 ```
 Host git.daal.plus
