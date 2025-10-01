@@ -1,9 +1,14 @@
 ## Usage
 
-1. Provide a `config` file based on `config.example`.
-2. Add a public key into `authorized_keys`, if you plan to proxy SSH connections to a VPN
-
+```bash
+cp config.example config
 ```
+
+```bash
+touch ssh/authorized_keys
+```
+
+```bash
 docker compose up -d
 ```
 
