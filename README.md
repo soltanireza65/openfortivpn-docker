@@ -1,9 +1,13 @@
 ## Usage
 
+### Add config file with respective credentials
+
 ```bash
 cp config.example config
 ```
 
+
+### Add your public key
 ```bash
 touch ssh/authorized_keys
 ```
