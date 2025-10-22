@@ -1,33 +1,12 @@
-## Usage
+# OpenFortiVpn in Docker
 
-### Add config file with respective credentials
+This runs openfortivpn in docker and exposes an http proxy
 
-```bash
-cp config.example config
-```
+# Usage
 
-
-### Add your public key
-```bash
-touch ssh/authorized_keys
-```
+1. Put your configuration of openfortivpn inside config (rename config.example to config and fill it)
+2. Run
 
 ```bash
 docker compose up -d
-```
-
-### Edit and add to your '.gitconfig' file
-
-```
-[http "https://git.daal.plus"]
-    proxy = socks5h://127.0.0.1:8080
-```
-
-### Same for .ssh/config
-
-```
-Host git.daal.plus
-  User git
-  IdentityFile ~/.ssh/id_rsa
-  ProxyCommand nc -x 127.0.0.1:8080 -X 5 %h %p
 ```
