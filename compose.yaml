@@ -12,5 +12,8 @@ services:
       - /dev/ppp:/dev/ppp
     cap_add:
       - NET_ADMIN
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
     ports:
       - 127.0.0.1:8888:8888
