@@ -20,7 +20,7 @@ docker compose up -d
 
 ```
 [http "https://git.daal.plus"]
-    proxy = socks5h://127.0.0.1:8080
+    proxy = socks5h://127.0.0.1:8888
 ```
 
 ### Same for .ssh/config
@@ -29,5 +29,5 @@ docker compose up -d
 Host git.daal.plus
   User git
   IdentityFile ~/.ssh/id_rsa
-  ProxyCommand nc -x 127.0.0.1:8080 -X 5 %h %p
+  ProxyCommand nc -x 127.0.0.1:8888 -X 5 %h %p
 ```
