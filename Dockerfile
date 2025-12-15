@@ -3,13 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 
-RUN apt-get -y --no-install-recommends install \
-    openfortivpn \
-    ppp \
-    ca-certificates \
-    openssh-server \
-    sudo \
-    vim
+RUN apt-get -y --no-install-recommends install openfortivpn ppp ca-certificates openssh-server sudo vim
 
 # SSH login fix. Otherwise user is kicked off after login
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd && \
@@ -45,7 +39,7 @@ COPY ./supervisord.conf /etc/
 EXPOSE 22
 
 # SOCKS5 proxy
-EXPOSE 8888
+EXPOSE 8080
 
 # Start supervisord
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
