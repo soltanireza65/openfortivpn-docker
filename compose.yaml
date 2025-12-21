@@ -1,19 +1,21 @@
 services:
-  openfortivpn:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    hostname: openfortivpn
+  forti:
+    build: .
+    hostname: forti
+    container_name: forti
     restart: unless-stopped
     tty: true
     volumes:
       - ./config:/etc/openfortivpn/config:ro
-      - ./ssh/authorized_keys:/home/user/.ssh/authorized_keys
+      - ./tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf:ro
+      - ./logs/tinyproxy:/var/log/tinyproxy
     devices:
       - /dev/net/tun:/dev/net/tun
       - /dev/ppp:/dev/ppp
     cap_add:
       - NET_ADMIN
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
     ports:
-      - 127.0.0.1:8080:8080
-      - 127.0.0.1:63010:22
+      - 127.0.0.1:8888:8888
