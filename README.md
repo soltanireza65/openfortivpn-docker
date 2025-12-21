@@ -26,3 +26,16 @@ Host example.com
   HostName example.com
   ProxyCommand nc -X connect -x 127.0.0.1:8888 %h %p
 ```
+
+
+## Trobleshooting
+
+```
+tail -f ./logs/tinyproxy/tinyproxy.log
+```
+
+You might see `Unauthorized connection from "192.168.97.1"` (docker gateway)
+
+This means your IP is not allowed to connect
+
+You can add it to the config file tinyproxy.conf with `Allow 192.168.97.1`
