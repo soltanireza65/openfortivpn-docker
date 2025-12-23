@@ -14,14 +14,14 @@ docker compose up -d
 ## Edit and add to your '.gitconfig' file
 
 ```
-[http "https://example.com"]
+[http "https://git.daal.plus"]
     proxy = http://127.0.0.1:8888
 ```
 
 ## Same for .ssh/config
 
 ```
-Host example.com
+Host git.daal.plus
   User git
   HostName example.com
   ProxyCommand nc -X connect -x 127.0.0.1:8888 %h %p
