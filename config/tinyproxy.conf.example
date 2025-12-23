@@ -10,5 +10,4 @@ LogLevel Info
 
 # Allow Docker network subnets
 Allow 172.0.0.0/8
-Allow 192.168.0.0/16
 
