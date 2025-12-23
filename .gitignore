@@ -1,3 +1,2 @@
-config
-authorized_keys
-logs
+config/openfortivpn.config
+config/tinyproxy.conf

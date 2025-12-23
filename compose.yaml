@@ -4,13 +4,10 @@ services:
     hostname: forti
     container_name: forti
     restart: unless-stopped
-    tty: true
     volumes:
-      - ./config:/etc/openfortivpn/config:ro
-      - ./tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf:ro
-      - ./logs/tinyproxy:/var/log/tinyproxy
+      - ./config/openfortivpn.config:/etc/openfortivpn/config:ro
+      - ./config/tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf:ro
     devices:
-      - /dev/net/tun:/dev/net/tun
       - /dev/ppp:/dev/ppp
     cap_add:
       - NET_ADMIN

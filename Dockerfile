@@ -4,6 +4,9 @@ RUN apk add openfortivpn --repository=http://dl-cdn.alpinelinux.org/alpine/edge/
 
 RUN apk add ppp ca-certificates tinyproxy
 
+COPY ./config/openfortivpn.config /etc/openfortivpn/config:ro
+COPY ./config/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf:ro
+
 COPY entrypoint.sh /
 
 EXPOSE 8888
