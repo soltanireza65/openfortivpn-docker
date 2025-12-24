@@ -1,2 +1,2 @@
-config/openfortivpn.config
-config/tinyproxy.conf
+config/*
+!config/*.example
