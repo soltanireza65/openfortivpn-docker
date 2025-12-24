@@ -8,6 +8,7 @@ COPY ./config/openfortivpn.config /etc/openfortivpn/config:ro
 COPY ./config/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf:ro
 
 COPY entrypoint.sh /
+RUN chmod +x ./entrypoint.sh
 
 EXPOSE 8888
 
