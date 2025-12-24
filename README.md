@@ -4,38 +4,45 @@ This runs openfortivpn in docker and exposes an http proxy
 
 ## Usage
 
-1. Put your configuration of openfortivpn inside config (rename config.example to config and fill it)
-2. Run
+Put your configurations inside config dir (copy and fill secrets)
 
 ```bash
-docker compose up -d
+cp config/openfortivpn.config.example config/openfortivpn.config
+cp config/tinyproxy.conf.example config/tinyproxy.conf
 ```
 
-## Edit and add to your '.gitconfig' file
+Edit and add to your '.gitconfig' file (replace 'example.com' with your own)
 
-```
-[http "https://git.daal.plus"]
+```bash
+[http "https://example.com"]
     proxy = http://127.0.0.1:8888
 ```
 
-## Same for .ssh/config
+Same for .ssh/config (replace 'example.com' with your own)
 
-```
-Host git.daal.plus
+```bash
+Host example.com
   User git
   HostName example.com
   ProxyCommand nc -X connect -x 127.0.0.1:8888 %h %p
 ```
 
+Run
 
-## Trobleshooting
-
+```bash
+docker compose up -d
 ```
-tail -f ./logs/tinyproxy/tinyproxy.log
+
+Then you can use `git` and `ssh`
+
+## Troubleshooting
+
+```bash
+docker compose exec forti tail -f -n0 /var/log/tinyproxy/tinyproxy.log
 ```
 
-You might see `Unauthorized connection from "192.168.97.1"` (docker gateway)
+You might see `Unauthorized connection from "<docker-gateway-ip>"` (docker gateway)
 
 This means your IP is not allowed to connect
 
-You can add it to the config file tinyproxy.conf with `Allow 192.168.97.1`
+You can add it to the config file `config/tinyproxy.conf` with `Allow <docker-gateway-ip>`

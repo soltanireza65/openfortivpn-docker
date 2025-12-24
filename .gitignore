@@ -1,3 +1,2 @@
-config
-authorized_keys
-logs
+config/*
+!config/*.example

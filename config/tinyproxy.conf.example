@@ -1,0 +1,13 @@
+Port 8888
+
+Listen 0.0.0.0
+
+Timeout 600
+
+LogFile "/var/log/tinyproxy/tinyproxy.log"
+
+LogLevel Info
+
+# Allow Docker network subnets
+Allow 172.0.0.0/8
+
