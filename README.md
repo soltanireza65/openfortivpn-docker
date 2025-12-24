@@ -27,7 +27,6 @@ Host example.com
   ProxyCommand nc -X connect -x 127.0.0.1:8888 %h %p
 ```
 
-
 Run
 
 ```bash
