@@ -9,5 +9,4 @@ LogFile "/var/log/tinyproxy/tinyproxy.log"
 LogLevel Info
 
 # Allow Docker network subnets
-Allow 172.0.0.0/8
-
+Allow 0.0.0.0/0
