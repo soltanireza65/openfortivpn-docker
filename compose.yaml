@@ -7,6 +7,7 @@ services:
     volumes:
       - ./config/openfortivpn.config:/etc/openfortivpn/config:ro
       - ./config/tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf:ro
+      - ./logs/tinyproxy/:/var/log/tinyproxy/
     devices:
       - /dev/ppp:/dev/ppp
     cap_add:

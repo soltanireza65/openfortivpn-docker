@@ -2,7 +2,7 @@ FROM alpine:3.22.2
 
 RUN apk add openfortivpn --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
 
-RUN apk add ppp ca-certificates tinyproxy
+RUN apk add ppp ca-certificates tinyproxy pgcli
 
 COPY ./config/openfortivpn.config /etc/openfortivpn/config:ro
 COPY ./config/tinyproxy.conf /etc/tinyproxy/tinyproxy.conf:ro
