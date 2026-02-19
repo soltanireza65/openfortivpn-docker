@@ -4,6 +4,7 @@ services:
     hostname: forti
     container_name: forti
     restart: unless-stopped
+    privileged: true
     volumes:
       - ./config/openfortivpn.config:/etc/openfortivpn/config:ro
       - ./config/tinyproxy.conf:/etc/tinyproxy/tinyproxy.conf:ro
