@@ -10,6 +10,8 @@ RUN apt-get update && \
         ca-certificates \
         tinyproxy \
         pgcli \
+        vim \
+        less \
         && rm -rf /var/lib/apt/lists/*
 
 # Copy configuration files
