@@ -1,3 +1,4 @@
 #!/bin/sh
+set -eux
 
-tinyproxy -c /etc/tinyproxy/tinyproxy.conf & openfortivpn -c /etc/openfortivpn/config
+tinyproxy -c /etc/tinyproxy/tinyproxy.conf & exec openfortivpn -c /etc/openfortivpn/config
