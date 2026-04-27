@@ -14,4 +14,4 @@ services:
     cap_add:
       - NET_ADMIN
     ports:
-      - 127.0.0.1:8888:8888
+      - 8888:8888
